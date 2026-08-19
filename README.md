@@ -13,14 +13,16 @@ falsifiable measurements.
 | step | train acc | test acc | concentration | trig R^2 | excluded loss |
 |---|---|---|---|---|---|
 | 0     | 0.02 | 0.01 | 0.264 (~ flat null 0.226) | 0.00 | 3.98 (~ ln p) |
-| 300   | 1.00 | ~0.44 | —    | —    | —    |
-| 1000  | 1.00 | ~0.40 | 0.39 | 0.11 | 0.25 (memorization floor) |
-| 2000  | 1.00 | ~0.40 | 0.48 | 0.24 | 1.69  <- **t_signal** |
-| 5000  | 1.00 | 0.94 | 0.82 | 0.75 | 13.3 |
+| 300   | 1.00 | 0.167 | —    | —    | —    |
+| 500   | 1.00 | 0.203 | 0.34 | 0.04 | 0.084 (memorization floor) |
+| 1000  | 1.00 | 0.265 | 0.39 | 0.11 | 0.25 |
+| 2000  | 1.00 | 0.332 | 0.48 | 0.24 | 1.69  <- **t_signal** |
+| 5000  | 1.00 | 0.941 | 0.82 | 0.75 | 13.3 |
 | 8500  | 1.00 | **1.0000** | **0.943** | 0.74 | 16.7 |
 
 * **Grokking reproduced** (P1): memorized by step ~300; test accuracy
-  plateaus ~0.40-0.48 until ~4000; reaches 1.0000 by 8500; total weight
+  climbs slowly (0.12 at step 100 to 0.33 by step 2000), then rises
+  sharply from ~step 3500, reaching 1.0000 by 8500; total weight
   norm falls 46 -> 31.7 through the transition.
 * **The algorithm is Fourier** (P2, P4): embedding spectrum collapses onto
   key frequencies {1, 19, 9, 4, 23} — stable from step 1000 onward — with

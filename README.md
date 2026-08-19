@@ -25,7 +25,7 @@ falsifiable measurements.
 | 8500  | 1.00 | **1.0000** | **0.943** | 0.74 | 16.7 |
 
 * **Grokking reproduced** (P1): memorized by step ~300; test accuracy
-  climbs slowly (0.12 at step 100 to 0.33 by step 2000), then rises
+  climbs steadily (0.12 at step 100 to 0.33 by step 2000), then rises
   sharply from ~step 3500, reaching 1.0000 by 8500; total weight
   norm falls 46 -> 31.7 through the transition.
 * **The algorithm is Fourier** (P2, P4): embedding spectrum collapses onto
@@ -48,11 +48,16 @@ falsifiable measurements.
   trig R^2, spectrum concentration, and excluded loss. The proper causal
   sufficiency test — ablating non-key frequencies in the *weights* — is
   extension M7 in CLAUDE.md.
-* trig R^2 plateaus ~0.74-0.78 here because the run early-stops at
-  concentration 0.943; the paper-scale config (p=113, frac 0.30, 40k
-  steps: `examples/run_full.py --p 113 --frac 0.30`) continues weight-decay
-  cleanup and is where the >0.9 acceptance criterion applies. CPU
-  overnight or minutes on a free T4.
+* trig R^2 peaks at 0.784 (step 7500) then dips to 0.742 by 8500 even
+  as concentration keeps rising — a real, non-monotonic late-cleanup
+  effect discussed in `docs/REPORT.md` §3.4. It plateaus in the
+  0.74-0.78 range here because the run early-stops at concentration
+  0.943; the paper-scale config (p=113, frac 0.30, up to 40k steps:
+  `examples/run_full.py --p 113 --frac 0.30 --steps 40000` — note the
+  script's own `--steps` default is 20000, so pass it explicitly for
+  the full paper-scale run) continues weight-decay cleanup and is
+  where the >0.9 acceptance criterion applies. CPU overnight or
+  minutes on a free T4.
 * t_grok and the key-frequency set are seed-dependent; claims above are
   for seed 0, exactly reproducible via the commands below.
 
@@ -64,8 +69,9 @@ PYTHONPATH=. python examples/run_full.py          # groks in ~15 min CPU
 PYTHONPATH=. python -m grok.analysis runs/full    # six measures per ckpt
 PYTHONPATH=. python plots/make_plots.py runs/full # P1-P4
 ```
-Training is resumable (`state_last.pt`); re-running the same command
-continues an interrupted run.
+Training is resumable: each run writes `state_last.pt` locally as it
+trains (gitignored, not committed — regenerate it by re-running);
+re-running the same command continues an interrupted run.
 
 ## The mathematics (summary; full derivations in CLAUDE.md §2)
 Orthonormal Fourier basis over Z_p: constant + normalized cos/sin pairs
@@ -83,4 +89,9 @@ bugs cannot masquerade as results.
     grok/{data,model,fourier,train,analysis}.py   tests/ (15, all CPU)
     examples/{run_smoke,run_full}.py   plots/make_plots.py
     runs/full/  committed artifacts: metrics.csv, metrics.json, P1-P4
+    assets/     copies of P1-P4 for README/report rendering
+    docs/REPORT.md   full 4-6 page writeup: derivations, all 4 figures,
+                     seed-sensitivity and non-monotonicity caveats
     CLAUDE.md   full spec: math, tests, milestones, 52-question bank
+    .github/workflows/tests.yml   CI: pytest across Python 3.10/3.11/3.12
+    LICENSE (MIT)   CITATION.cff

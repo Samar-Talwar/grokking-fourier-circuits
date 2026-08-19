@@ -1,0 +1,182 @@
+[
+  {
+    "step": 0,
+    "key_freqs": [
+      24,
+      6,
+      2,
+      11,
+      1,
+      20
+    ],
+    "concentration": 0.26408079826003644,
+    "trig_r2": 1.1183460613128915e-07,
+    "restricted_acc": 0.0,
+    "excluded_loss": 3.981728357117191
+  },
+  {
+    "step": 10,
+    "key_freqs": [
+      24,
+      6,
+      2,
+      11,
+      1,
+      20
+    ],
+    "concentration": 0.2621882166387222,
+    "trig_r2": 1.600261103629208e-06,
+    "restricted_acc": 1.0,
+    "excluded_loss": 3.8957452047846832
+  },
+  {
+    "step": 20,
+    "key_freqs": [
+      24,
+      6,
+      11,
+      2,
+      19,
+      1
+    ],
+    "concentration": 0.2612550454776539,
+    "trig_r2": 5.779478867373733e-06,
+    "restricted_acc": 1.0,
+    "excluded_loss": 3.7695254931479667
+  },
+  {
+    "step": 50,
+    "key_freqs": [
+      24,
+      19,
+      1,
+      6,
+      9,
+      14
+    ],
+    "concentration": 0.258720164177965,
+    "trig_r2": 0.00020739483093490385,
+    "restricted_acc": 1.0,
+    "excluded_loss": 3.0721726646593632
+  },
+  {
+    "step": 100,
+    "key_freqs": [
+      1,
+      19,
+      9,
+      24,
+      4,
+      23
+    ],
+    "concentration": 0.2960506184090603,
+    "trig_r2": 0.013634301608729471,
+    "restricted_acc": 1.0,
+    "excluded_loss": 0.5406587718128881
+  },
+  {
+    "step": 200,
+    "key_freqs": [
+      1,
+      19,
+      9,
+      24,
+      4,
+      23
+    ],
+    "concentration": 0.3087632959712829,
+    "trig_r2": 0.021144461155140015,
+    "restricted_acc": 1.0,
+    "excluded_loss": 0.1915015263022977
+  },
+  {
+    "step": 500,
+    "key_freqs": [
+      1,
+      19,
+      9,
+      4,
+      24,
+      23
+    ],
+    "concentration": 0.34007848832094195,
+    "trig_r2": 0.043600104337100376,
+    "restricted_acc": 1.0,
+    "excluded_loss": 0.08396518864061407
+  },
+  {
+    "step": 1000,
+    "key_freqs": [
+      1,
+      19,
+      9,
+      4,
+      23,
+      24
+    ],
+    "concentration": 0.3921236402223471,
+    "trig_r2": 0.10655470186899751,
+    "restricted_acc": 1.0,
+    "excluded_loss": 0.24536342737194822
+  },
+  {
+    "step": 2000,
+    "key_freqs": [
+      1,
+      19,
+      9,
+      4,
+      23,
+      24
+    ],
+    "concentration": 0.4806917311183097,
+    "trig_r2": 0.23649632146599098,
+    "restricted_acc": 1.0,
+    "excluded_loss": 1.6854332519294524
+  },
+  {
+    "step": 5000,
+    "key_freqs": [
+      1,
+      19,
+      9,
+      4,
+      23,
+      22
+    ],
+    "concentration": 0.8196905650855267,
+    "trig_r2": 0.7520297926757532,
+    "restricted_acc": 1.0,
+    "excluded_loss": 13.31592800867321
+  },
+  {
+    "step": 7500,
+    "key_freqs": [
+      1,
+      19,
+      9,
+      4,
+      23,
+      2
+    ],
+    "concentration": 0.936796379345181,
+    "trig_r2": 0.784118486499409,
+    "restricted_acc": 1.0,
+    "excluded_loss": 8.836601338530842
+  },
+  {
+    "step": 8500,
+    "key_freqs": [
+      1,
+      19,
+      9,
+      4,
+      8,
+      15
+    ],
+    "concentration": 0.9429941266974399,
+    "trig_r2": 0.7420219964286123,
+    "restricted_acc": 1.0,
+    "excluded_loss": 16.66508408017969
+  }
+]

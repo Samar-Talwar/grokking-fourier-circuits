@@ -1,0 +1,1 @@
+{"p": 53, "frac_train": 0.4, "steps": 20000, "lr": 0.001, "betas": [0.9, 0.98], "wd": 1.0, "seed": 0, "d_model": 128, "n_head": 4, "d_mlp": 512, "out_dir": "runs/full", "log_every": 100, "ckpt_steps": [], "stop_test_acc": 0.999, "stop_concentration": 0.85, "resume": true}

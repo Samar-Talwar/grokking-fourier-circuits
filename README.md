@@ -1,5 +1,7 @@
 # Fourier-Circuit Reverse-Engineering of Grokking
 
+![tests](https://github.com/Samar-Talwar/grokking-fourier-circuits/actions/workflows/tests.yml/badge.svg)
+
 Reproduction and mechanistic analysis of **grokking** (Power et al. 2022):
 a one-layer transformer trained on (a + b) mod p memorizes its training
 set early, sits at near-chance test accuracy for thousands of steps, then

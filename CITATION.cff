@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "Fourier-Circuit Reverse-Engineering of Grokking"
+authors:
+  - family-names: "Talwar"
+    given-names: "Samar"
+date-released: 2026-08-19
+url: "https://github.com/Samar-Talwar/grokking-fourier-circuits"
+license: MIT
